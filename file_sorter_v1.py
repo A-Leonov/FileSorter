@@ -28,7 +28,8 @@ def ext_check(file, ext_groups):
         return 'Other files'
 
 
-def file_sorter(path):
+def file_sorter():
+    path = input('Введите адрес папки для сортировки: \n')
     os.chdir(path)
     categories = {'Music': ['mp3', 'flac', 'wmv', 'acc', 'wav'],
                   'Apps': ['exe', 'lnk'],
@@ -62,4 +63,5 @@ def file_sorter(path):
                 shutil.move(f'{file}', f'./Other files/{file}')
 
 
-file_sorter(input('Введите адрес папки для сортировки: \n'))
+if __name__ == "__main__":
+    file_sorter()
